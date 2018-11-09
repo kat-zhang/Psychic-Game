@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- ///<script src="game.js"></script> -->
+</head>
+
+<body>
+
+   
+
+
+    <script type="text/javascript">
+       var gameLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        var win = 0;
+        var lose = 0;
+        var guessCount = 10;
+        var playerGuess =
+
+        var winCount = document.getElementById("win-count");
+        var loseCount = document.getElementById("lose-count");
+        var guessRemain = document.getElementById("guess-count")
+        var playerGuess = document.getElementById("player-guess");
+
+
+        document.onkeyup = function (event) {
+
+        var playerPress = event.key;
+        var compThink = gameLetters[Math.floor(Math.random() * gameLetters.length)];
+
+        if (playerPress === gameLetters) {
+
+
+            if (playerPress===compThink) {
+                win++;
+            } else {
+                lose++;
+                guessRemain--;
+            }
+           
+            playerGuess.textcontent = "Your guesses so far ... " ''+'' playerPress;
+            winCount.textContent = "Wins:" ''+'' win;
+            loseCount.textContent = "Losses:" ''+'' lose;
+            guessRemain.textContent = "Guesses remaining:" ''+'' guessRemain;
+
+
+        }   
+
+    };
+        
+
+
+
+    </script>
+
+</body>
+
+</html>

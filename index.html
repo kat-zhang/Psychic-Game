@@ -11,17 +11,16 @@
 </head>
 
 <body>
+
     <h1> Psychic Game</h1>
     <p> Can you guess what letter I am thinking of?</p>
 
     <div class="scoreboard">
 
-        <p id="wins"></p>
-        <p id="losses"></p>
-        <p id="lives"></p>
-        <p id="guessed"></p>
-
-
+        <p id="win-count"> Wins: </p>
+        <p id="loss-count"> Losses: </p>
+        <p id="guess-count"> Guesses remaining:</p>
+        <p id="player-guess"> Guesses so far... </p>
 
     </div>
 
@@ -32,10 +31,12 @@
         var compLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
             "s", "t", "u", "v", "w", "x", "y", "z"
         ];
-        var compThink = compLetters[Math.floor(Math.random() *compLetters.length) ];
-        console.log(compThink);
+        var compThink = compLetters[Math.floor(Math.random() * compLetters.length) ];
+        //console.log(compThink);
         ///*****************************************************************
+
         
+
     </script>
 
 
