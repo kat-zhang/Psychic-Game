@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="game.js"></script>
+</head>
+
+<body>
+    <h1> Psychic Game</h1>
+    <p> Can you guess what letter I am thinking of?</p>
+
+    <div class="scoreboard">
+
+        <p id="wins"></p>
+        <p id="losses"></p>
+        <p id="lives"></p>
+        <p id="guessed"></p>
+
+
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        /// DON'T TOUCH ME I'M PERFECT
+        var compLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+            "s", "t", "u", "v", "w", "x", "y", "z"
+        ];
+        var compThink = compLetters[Math.floor(Math.random() *compLetters.length) ];
+        console.log(compThink);
+        ///*****************************************************************
+        
+    </script>
+
+
+
+</body>
+
+</html>
