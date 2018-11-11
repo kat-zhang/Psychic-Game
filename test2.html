@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
@@ -14,10 +16,10 @@
     <p> Can you guess what letter I am thinking of?</p>
 
     <div class="scoreboard">
-        <p id="player-guess"></p>
-        <p id="guess-count"></p>
-        <p id="win-count"></p>
-        <p id="loss-count"></p>
+        <p id="player-guess"> Your guesses so far... </p>
+        <p id="guess-count"> Guesses remaining </p>
+        <p id="win-count"> Wins: </p>
+        <p id="loss-count"> Losses: </p>
         
     </div>
 <script type=text/javascript>
@@ -39,23 +41,23 @@
     document.onkeyup = function(event) {
         
         var playerKey = event.key;
+        console.log("Guess",playerKey);
 
         var compThink = compLetters[Math.floor(Math.random() * compLetters.length)];
-        console.log(compThink);
+        console.log("Computer",compThink);
 
         if (playerKey === compThink) {
-            guessRemain=10;
-            wins++;  
+           
+            wins++; 
+            guessRemain=10; 
             winCount.textContent = "Wins:" + wins;
-            console.log("wins",wins);    
+            guessLess.textContent = "Guesses remaining: " + guessRemain;
+            console.log("WIN COUNT", wins);
+            console.log("RESET GUESSES", guessRemain);
         }   else if ( playerKey !== compThink) {
-            // losses++;
-            // lossCount.textcontent = "Losses:" + losses;
-            // console.log("losses",losses);
             guessRemain--;
             guessLess.textContent = "Guesses remaining:" + guessRemain;
-            console.log("guessLess", guessLess);
-            console.log("guessRemain",guessRemain);
+            console.log("GUESSES REMAINING",guessRemain);
         }
 
         if (guessRemain < 1 ) {
@@ -63,11 +65,10 @@
             guessRemain=10;
             guessLess.textContent = "Guesses remaining:" + guessRemain;
             lossCount.textContent = "Losses " + losses;
+            console.log("LOSE TOTAL", losses);
+            console.log("RESET GUESSES", guessRemain);
+
         }   
-
-
-
-
 
         guessList.push(event.key );
         guessLog.textContent = "Your guesses so far: " + guessList;

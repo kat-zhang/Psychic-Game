@@ -1,32 +1,57 @@
-var gameLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var compThink = gameLetters[Math.floor(Math.random)() gameLetters.length];
+var compLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-.....
+var guessList = []
+var wins = 0;
+var losses = 0;
+var guessRemain = 10;
 
-
-var win = 0;
-var loss = 0;
-var guessCount = 10;
-var playerGuess =
-
+var guessLog = document.getElementById("player-guess");
 var winCount = document.getElementById("win-count");
 var lossCount = document.getElementById("loss-count");
-var playerGuess = document.getElementById("player-guess");
+var guessLess = document.getElementById("guess-count");
 
-document.onkeyup = function (event) {
+document.onkeyup = function(event) {
 
-        var playerPress = event.key;
-        if (playerGuess === gameLetters) {
-            var compThink = gameLetters[Math.floor(Math.random() * gameLetters.length)];
+    var playerKey = event.key;
+    console.log("Guess",playerKey);
 
-            if (playerKey === compThink) {
-                win++;
-            } else {
-                loss++,
-                guessCount--;
-            }
+    var compThink = compLetters[Math.floor(Math.random() * compLetters.length)];
+    console.log("Computer",compThink);
 
-        }   winCount.textContent = 
-            lossCount.textContent =
-            guessCount.textContent = 
-            playerGuess.textContent = "Your guesses so far..." + playerKey;
+    if (playerKey === compThink) {
+        wins++;
+        guessRemain=10;
+        winCount.textContent = "Wins:" + wins;
+        guessLess.textContent = "Guesses remaining: " + guessRemain;
+        console.log("WIN COUNT", wins);
+        console.log("RESET GUESSES", guessRemain);
+        }   else if (playerKey !== compThink) {
+            guessRemain--;
+            guessLess.textContent = "Guesses remaining:" + guessRemain;
+            console.log("GUESSES REMAINING",guessRemain);
+    
+        }
+    
+        if (guessRemain < 1 ) {
+            losses++;
+            guessRemain=10;
+            guessLess.textContent = "Guesses remaining:" + guessRemain;
+            lossCount.textContent = "Losses " + losses;
+            console.log("LOSE TOTAL", losses);
+            console.log("RESET GUESSES", guessRemain); 
+    
+        }  
+            
+
+
+            guessList.push(event.key );
+            guessLog.textContent = "Your guesses so far: " + guessList;
+            winCount.textContent = "Wins: " + wins;
+            lossCount.textContent = "Losses: " + losses;
+            guessLess.textContent = "Guesses remaining: " + guessRemain;
+
+
+    
+
+    
+   };

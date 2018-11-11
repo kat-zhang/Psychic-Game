@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title> Pyschic Game </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <!-- <script src="game.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    
 </head>
-
 <body>
-
-    <h1> Psychic Game</h1>
-    <p> Can you guess what letter I am thinking of?</p>
-
-    <div class="scoreboard">
-
-        <p id="win-count"> Wins: </p>
-        <p id="loss-count"> Losses: </p>
-        <p id="guess-count"> Guesses remaining:</p>
-        <p id="player-guess"> Guesses so far... </p>
-
+    
+<div class="jumbotron jumbotron-fluid gameTitle">
+    <div class="container">
+        <h1 class="display-4"> Can you read my mind?</h1>
+        <p class="lead">I'm thinking of a letter... <br>
+        press the key to tell me your guess...</p>
     </div>
+            
+</div>
+<div class="container-fluid">
+    <div class="scorecontainer">
+        <p class = scoreboard id="player-guess"> Your guesses so far: </p>
+    </div>
+</div>
 
+<div class="container-fluid">
+    <div class="scorecontainer">
+        <p class = scoreboard id="guess-count"> Guesses remaining...</p>
+        <p class = scoreboard id="win-count"> Wins: </p>
+        <p class = scoreboard id="loss-count"> Losses: </p>  
+    </div>
+</div>
 
-
-    <script type="text/javascript">
-        /// DON'T TOUCH ME I'M PERFECT
-        var compLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
-            "s", "t", "u", "v", "w", "x", "y", "z"
-        ];
-        var compThink = compLetters[Math.floor(Math.random() * compLetters.length) ];
-        console.log(compThink);
-        
-
-        
-
-    </script>
-
-
-
+<script src="assets/javascript/game.js"></script>
 </body>
-
 </html>
