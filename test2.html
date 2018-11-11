@@ -25,7 +25,7 @@
 
 
 
-    var guessList = [""];
+    var guessList = document.getElementById("")
     var wins = 0;
     var losses = 0;
     var guessRemain = 10;
@@ -55,11 +55,12 @@
             console.log("guessLess", guessLess);
             console.log("guessRemain",guessRemain);
         }
+
         
 
 
-
-        // guessLog.textContent = "Your guesses so far:" + guessList;
+        // guessLog.push("playerKey");
+        guessLog.textContent = "Your guesses so far:" + guessList;
         winCount.textContent = "Wins:" + wins;
         lossCount.textContent = "Losses:" + losses;
         guessLess.textContent = "Guesses remaining:" + guessRemain;
